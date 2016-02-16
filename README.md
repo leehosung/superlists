@@ -19,3 +19,7 @@
 ## Chapter4
 
 - One of the great things about TDD is that you never have to worry abount forgetting what to do next - just rerun your tests and they will tell you waht you need to work on.
+- Don't Test Constants : Unit tests are really about testing logic, flow control, and configuration
+- Refactoring is trying to iprove the code without changing its functionality.
+- When refactoring, work on eighter the code or the tests, but not both at once.
+- Refactoring Cat <-> Testing Goat.
