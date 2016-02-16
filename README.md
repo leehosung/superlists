@@ -15,3 +15,7 @@
 
 - the functional tests are driving what development we do from a high level, while the unit tests drive what we do at a low level
 - Functional tests should help you build an application with the right functionality and guarantee you never accidentally break it. Unit tests should help you to write code that's clean and bug free.
+
+## Chapter4
+
+- One of the great things about TDD is that you never have to worry abount forgetting what to do next - just rerun your tests and they will tell you waht you need to work on.
