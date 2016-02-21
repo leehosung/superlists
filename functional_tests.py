@@ -38,20 +38,24 @@ class NewVisitorTest(unittest.TestCase):
 
         table = self.browser.find_element_by_id('id_list_table')
         rows = table.find_elements_by_tag_name('tr')
-        self.assertTrue(
-            any(row.text == '1: Buy peacock feathers' for row in rows),
-            "New to-do item did not appear in table"
-        )
+        self.assertIn('1: Buy peacock feathers', [row.text for row in rows])
 
         # 여전히 텍스트 박스가 있습니다.
         # "Use peacock feathers to make a fly"를 입력합니다.
-        self.fail('Finish the test!')
+        inputbox = self.browser.find_element_by_id('id_new_item')
+        inputbox.send_keys('Use peacock feathers to make a fly')
+        inputbox.send_keys(Keys.ENTER)
 
         # 다시 한번 페이지가 업데이트 됩니다. 그리고 두 항목 모두를 볼 수 있습니다.
+        table = self.browser.find_element_by_id('id_list_table')
+        rows = table.find_elements_by_tag_name('tr')
+        self.assertIn('1: Buy peacock feathers', [row.text for row in rows])
+        self.assertIn('2: Use peacock feathers to make a fly', [row.text for row in rows])
 
         # Edith 는 싸이트가 그녀의 리스트를 기억하고 있는 지 궁금합니다.
         # 그녀는 싸이트가 유일한 URL을 만들어 둔것을 볼 수 있습니다.
         # 그 URL에 대한 적절한 설명을 볼 수 있습니다.
+        self.fail('Finish the test!')
 
         # 그녀는 위 URL 을 방문합니다. 그녀가 입력한 항목들이 남아 있습니다.
 

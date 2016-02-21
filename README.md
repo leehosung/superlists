@@ -23,3 +23,14 @@
 - Refactoring is trying to iprove the code without changing its functionality.
 - When refactoring, work on eighter the code or the tests, but not both at once.
 - Refactoring Cat <-> Testing Goat.
+
+## Chapter5
+
+- Setup, Exercise, Assert is the typical structure for a unit test. group them with a line spacing
+- Red, Green, Refactor
+    - Start by writing a unit test which fails (Red)
+    - Write the simplest possible code to get it to pass (Green), even if that means cheating.
+    - Refactor to get to better code that makes more sense. 
+- Don't repeat yourself (DRY)
+- three strikes and refactor
+- before you do any refactoring, always do a commit 
