@@ -34,3 +34,4 @@
 - Don't repeat yourself (DRY)
 - three strikes and refactor
 - before you do any refactoring, always do a commit 
+- Always redirect after a POST
