@@ -35,3 +35,10 @@
 - three strikes and refactor
 - before you do any refactoring, always do a commit 
 - Always redirect after a POST
+- Useful TDD concepts
+    - regression
+    - unexpected failure
+    - red/green/refactor
+    - triangulation
+    - three strikes and refactor
+    - the scratchpad to-do list
