@@ -48,3 +48,5 @@
 - Small design when necessary
 - YAGNI: You aint gonna need it 
 - REST : Representational State Transfer
+- from working state to working state
+- fixing that and only that
