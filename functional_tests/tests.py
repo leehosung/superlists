@@ -40,6 +40,8 @@ class NewVisitorTest(LiveServerTestCase):
         # 그녀가 엔터를 치면 페이지가 업데이트 되고 리스트에서
         # "1: Buy peacock feathers" 를 볼 수 있습니다.
         inputbox.send_keys(Keys.ENTER)
+        edith_list_url = self.browser.current_url
+        self.assertRegex(edith_list_url, '/list/.+')
         self.check_for_row_in_list_table('1: Buy peacock feathers')
 
         # 여전히 텍스트 박스가 있습니다.
@@ -52,11 +54,33 @@ class NewVisitorTest(LiveServerTestCase):
         self.check_for_row_in_list_table('1: Buy peacock feathers')
         self.check_for_row_in_list_table('2: Use peacock feathers to make a fly')
 
-        # Edith 는 싸이트가 그녀의 리스트를 기억하고 있는 지 궁금합니다.
-        # 그녀는 싸이트가 유일한 URL을 만들어 둔것을 볼 수 있습니다.
-        # 그 URL에 대한 적절한 설명을 볼 수 있습니다.
-        self.fail('Finish the test!')
+        # 새로운 사용자 Francis 가 싸이트에 들어 옵니다.
+        ## 새로운 브라우저를 띄웁니다.
+        ## 쿠키등으로 인해 Edith 의 정보가 남아 있지 않게 하기 위함입니다.
+        self.browser.quit()
+        self.browser = webdriver.Chrome('drivers/chrome')
 
-        # 그녀는 위 URL 을 방문합니다. 그녀가 입력한 항목들이 남아 있습니다.
+        # Francis 는 홈페이지를 방문합니다. 홈페이지에는 Edith 의 흔적이 없어야 합니다.
+        self.browser.get(self.live_server_url)
+        page_text = self.browser.find_element_by_tag_name('body').text
+        self.assertNotIn('Buy peacock feathers', page_text)
+        self.assertNotIn('make a fly', page_text)
+
+        # Francis 는 새 아이템을 입력합니다.
+        # 그는 Edith 보다는 관심이 크지 않습니다.
+        inputbox = self.browser.find_element_by_id('id_new_item')
+        inputbox.send_keys('Buy milk')
+        inputbox.send_keys(Keys.ENTER)
+
+        # Francis 는 고유한 URL 을 받습니다.
+        francis_list_url = self.browser.current_url
+        self.assertRegex(francis_list_url, '/lists/.+')
+        self.assertNotEqual(francis_list_url, edith_list_url)
+
+        # 다시 Edith의 흔적이 없는지를 확인합니다.
+        page_text = self.browser.find_element_by_tag_name('body').text
+        self.assertNotIn('Buy peacock feathers', page_text)
+        self.assertIn('Buy milk', page_text)
 
         # 훌륭하네요. 자러 갑니다.
+        self.fail('Finish the test!')

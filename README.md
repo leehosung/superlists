@@ -43,5 +43,8 @@
     - three strikes and refactor
     - the scratchpad to-do list
     
-## Chpater6
+## Chapter6
 
+- Small design when necessary
+- YAGNI: You aint gonna need it 
+- REST : Representational State Transfer
