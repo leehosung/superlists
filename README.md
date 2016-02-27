@@ -42,3 +42,6 @@
     - triangulation
     - three strikes and refactor
     - the scratchpad to-do list
+    
+## Chpater6
+

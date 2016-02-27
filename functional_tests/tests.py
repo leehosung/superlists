@@ -1,9 +1,9 @@
+from django.test import LiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-import unittest
 
 
-class NewVisitorTest(unittest.TestCase):
+class NewVisitorTest(LiveServerTestCase):
 
     def setUp(self):
         self.browser = webdriver.Chrome('drivers/chrome')
@@ -20,7 +20,7 @@ class NewVisitorTest(unittest.TestCase):
     def test_can_start_a_list_and_retreive_it_later(self):
         # Edith 는 새로운 멋진 할일관리 싸이트에 대해서 들었습니다.
         # 홈페이지를 확인해 봅니다.
-        self.browser.get('http://localhost:8000')
+        self.browser.get(self.live_server_url)
 
         # 페이지의 제목이 할일관리인 것을 확인 합니다.
         self.assertIn('To-Do', self.browser.title)
