@@ -83,4 +83,4 @@ class NewVisitorTest(LiveServerTestCase):
         self.assertIn('Buy milk', page_text)
 
         # 훌륭하네요. 자러 갑니다.
-        self.fail('Finish the test!')
+        # self.fail('Finish the test!')
