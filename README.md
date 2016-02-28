@@ -57,3 +57,5 @@
 
 - check the smallest style to get the confidence that the rest of the styling for that page is probably loaded too.
 - use assertAlmostEqual
+- you shouldn't write tests for design and layout
+
