@@ -50,3 +50,6 @@
 - REST : Representational State Transfer
 - from working state to working state
 - fixing that and only that
+- URLs without a trailing slash are "action" URLs which modify the database
+- use assertRedirects to check a redirection after a POST
+- 
