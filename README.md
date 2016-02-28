@@ -52,4 +52,8 @@
 - fixing that and only that
 - URLs without a trailing slash are "action" URLs which modify the database
 - use assertRedirects to check a redirection after a POST
-- 
+
+## Chapter7
+
+- check the smallest style to get the confidence that the rest of the styling for that page is probably loaded too.
+- use assertAlmostEqual
