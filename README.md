@@ -59,3 +59,6 @@
 - use assertAlmostEqual
 - you shouldn't write tests for design and layout
 
+## Chapter8
+
+- pass
