@@ -2,7 +2,7 @@ Django==1.9.2
 ecdsa==0.13.3
 Fabric==1.10.2
 gunicorn==19.4.5
-paramiko==1.16.0
+paramiko==2.0.9
 pycrypto==2.6.1
 requests==2.9.1
 selenium==2.52.0
